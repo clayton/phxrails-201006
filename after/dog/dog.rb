@@ -10,22 +10,23 @@ class Dog
 
   # FLOG
   # --------------------------
-  # 16.8: flog total
-  #  5.6: flog/method average
+  # 20.3: flog total
+  #  5.1: flog/method average
   #
-  #  8.9: Dog#speak
+  #  7.0: Dog#bark_by_size
   #  6.8: Dog#initialize
+
 
   def speak
     return "#{@bark} #{@bark} #{@bark} #{@bark} #{@bark}" if guarding
     return "" if trained
-    if @size == "Small"
-      @bark
-    elsif @size == "Medium"
-      "#{@bark} #{@bark}"
-    elsif @size == "Large"
-      "#{@bark} #{@bark} #{@bark}"
-    end
+
+    bark_by_size
   end
 
+private
+  def bark_by_size
+    volume = {"Small" => 1, "Medium" => 2, "Large" => 3}
+    ([@bark] * volume[size]).join(" ")
+  end
 end
