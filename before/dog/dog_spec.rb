@@ -1,5 +1,5 @@
-require File.join(File.dirname(File.expand_path(__FILE__)),"..", "..", "spec_helper.rb")
-require 'dog'
+require File.join(File.dirname(File.expand_path(__FILE__)),"..", "..", "spec_helper")
+require File.join(File.dirname(File.expand_path(__FILE__)),"dog")
 
 describe "Dog" do
   describe "speak" do
