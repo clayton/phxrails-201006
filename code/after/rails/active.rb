@@ -1,14 +1,14 @@
 # FLOG
 # ----------------------
-# 9.0: flog total
-# 9.0: flog/method average
+# 15.1: flog total
+# 15.1: flog/method average
 #
-# 9.0: main#active?
+# 15.1: main#active?
 
 def active?
   now      = Time.now
-  earliest = begin_date.strftime('%Y-%m-%d 06:00')
-  latest   = end_date.strftime('%Y-%m-%d 23:59')
+  earliest = begin_date.beginning_of_day + 6.hours
+  latest   = end_date.end_of_day - 1.minute
 
   now >= earliest && now <= latest
 end
